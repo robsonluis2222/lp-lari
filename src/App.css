@@ -1,0 +1,922 @@
+@import url('https://fonts.cdnfonts.com/css/justus');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body{
+  margin: 0;
+}
+.App{
+  min-height: 2000px;
+}
+.header{
+  display: flex;
+  background-image: url('https://www.vgimobiliaria.com.br/upload/realty/iN3Ot16G5_339561bc9c94d665a.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+  background-blend-mode: darken; /* Faz a cor escurecer a imagem */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.capa{
+  width: auto;
+  height: auto;
+}
+.filter{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 576px;
+  z-index: 1;
+}
+.title-of{
+  font-size: 25px;
+  font-family: 'Justus', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 200px;
+  color: white;
+}
+.subtitle-nav{
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 26px;
+  width: 70vw;
+  text-align: center;
+  font-style: italic;
+  color: white;
+}
+.apresentacao{
+  font-family: "Padauk", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  margin-top: 20px;
+}
+.lancamento{
+  font-family: "Padauk", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  color: white;
+  padding: 2px 7px;
+  border: 2px solid white;
+  margin-bottom: 250px;
+}
+.more-infor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+.saber-mais-span{
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: #FFFFFFCC;
+  margin-top: -120px;
+}
+#arrow-down{
+  font-size: 30px;
+  cursor: pointer;
+  color: #FFFFFFCC;
+}
+.video-frame{
+  display: 	flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -50px;
+}
+.title-video-frame{
+  min-height: 500px;
+  width: 100%;
+  display: 	flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.reels1-div{
+  display: flex;
+  width: 48%;
+  align-items: center;
+  justify-content: center;
+}
+.video-reels1-style{
+  width: 40vw;
+}
+.info-reels1{
+  width: 48%;
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.title-video{
+  font-size: 35px;
+  font-family: 'Justus', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  color: #005A66;
+}
+.subtitle-video{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 22px;
+  color: #cd6133 !important;
+  width: auto;
+  font-style: normal;
+}
+.video{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 58px;
+}
+.video-btn{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 18px;
+  color: #005A66;
+  padding: 15px 80px;
+  border: 2px solid #005A66;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.video-btn:hover{
+  background-color: #005A66;
+  color: white;
+}
+.video-modal{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:10000;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#close-video-btn{
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  color: white;
+  font-size: 30px;
+}
+.frame-video{
+  width: 560px;
+  height: 315px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#iframe{
+  position: fixed;
+  width: 60vw;
+  height: 60vh;
+}
+.about{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 58px;
+}
+.about-title-frame{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 28px;
+  text-align: center;
+  max-width: 1000px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.imagem-corretora{
+  width: 250px;
+  border-radius: 15px;
+  border: 1px solid #005A66;
+}
+.about-title{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 19px;
+  color: #383838;
+  text-align: center;
+  font-style: normal;
+  width: 300px;
+}
+#especific-color{
+  color: #005A66;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* src/Carousel.css */
+.slider-conf{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Estilo padrão para o carrossel */
+.carousel-slide {
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  margin: 0 5px; /* Margem entre imagens */
+}
+
+/* Estilo para a imagem dentro do slide */
+.carousel-slide img {
+  width: 100%;
+  height: auto; /* Mantém a proporção da imagem */
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+  object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorção */
+}
+
+/* Faz com que a imagem do meio fique na frente e maior */
+.slick-center .carousel-slide img {
+  transform: scale(1.1); /* Ajusta o zoom para a imagem central */
+  z-index: 10; /* Garantir que a imagem centralizada fique na frente */
+}
+
+/* Adiciona um fundo escuro com opacidade para a legenda */
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.footer{
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  color:#575757;
+  font-style: normal;
+}
+
+/* Responsivo para telas maiores (tablets e celulares) */
+@media (max-width: 768px) {
+  .carousel-slide {
+    margin: 0 10px; /* Ajusta a margem se necessário */
+  }
+
+  .carousel-slide img {
+    height: 250px; /* Ajuste a altura conforme necessário */
+  }
+
+  .slick-center .carousel-slide img {
+    transform: scale(1.2); /* Aumenta o zoom na imagem centralizada se necessário */
+  }
+}
+
+/* Ajuste adicional para telas menores, como celulares */
+@media (max-width: 480px) {
+  .carousel-slide {
+    margin: 0 15px; /* Ajusta a margem para telas muito pequenas */
+  }
+
+  .carousel-slide img {
+    height: 300px; /* Ajusta a altura para telas menores */
+  }
+
+  .slick-center .carousel-slide img {
+    transform: scale(1.3); /* Aumenta ainda mais o zoom na imagem centralizada */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h3{
+  padding: 10px 0px;
+  background-color: #005a6683;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+  top: 50px;
+}
+.stage-frame{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw;
+  margin-top: 108px;
+  margin-left: 15%;
+  gap: 10px;
+}
+.all-stages-div{
+  display: none;
+  flex-direction: column;
+  width: 70vw;
+  margin-left: 0;
+  gap: 10px;
+}
+.show-more-stages-div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 20px;
+  gap: 0;
+  cursor: pointer;
+  color: #575757;
+}
+#one-arrow-down{
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: -10px;
+}
+.title-stages{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-frame-stage{
+  font-family: "Prata", serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 30px;
+  color: #005A66;
+}
+.stage-geral-title{
+  font-family: "Prata", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  color: #005A66;
+}
+
+.progress-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%; /* Ajuste a largura conforme necessário */
+  background-color: #e0e0e0; /* Cor do fundo da barra de progresso */
+  border-radius: 5px;
+  border: 1px solid rgb(100, 100, 100);
+  padding: 10px; /* Espaçamento interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efeito de profundidade */
+}
+
+/* Barra de progresso */
+.progress-bar {
+  height: 30px; /* Altura da barra de progresso */
+  background-color: #005A66; /* Cor da barra de progresso */
+  border-radius: 20px; /* Bordas arredondadas da barra */
+  text-align: center; /* Alinha o texto no centro */
+  line-height: 30px; /* Alinha o texto verticalmente */
+  color: rgb(214, 214, 214); /* Cor do texto */
+  font-weight: bold; /* Peso da fonte */
+  transition: width 0.4s ease; /* Suaviza a transição da largura */
+}
+.location-frame{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+a{
+  outline: none;
+  text-decoration: none;
+}
+.title-location{
+  font-family: "Prata", serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 30px;
+  color: #005A66;
+}
+.map{
+  margin-top: 28px;
+  width: 70vw;
+  height: 300px;
+}
+
+.contact-frame{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 108px;
+}
+.contact-title{
+  font-family: "Prata", serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 30px;
+  color: #005A66;
+  margin-bottom: 28px;
+}
+.subtitle-contact{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  text-align: center;
+  font-style: normal;
+  font-size: 18px;
+  margin-bottom: 28px;
+  color: black;
+}
+.form-frame{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 250px;
+}
+.form-frame2{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-left: 30%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.bi-volume-mute-fill{
+  z-index: 90;
+  color: white;
+  font-size: 50px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: absolute;
+  margin-left: 0px;
+  margin-bottom: 100px;
+}
+.form-action{
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 60px;
+}
+.title-of-contact-type{
+  display: inline-block;
+}
+.inpt-tower{
+  border: 1px solid rgb(199, 198, 198);
+}
+.prefer-contact{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 20px;
+  font-style: normal;
+  font-size: 16px;
+}
+.checkboxs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+input{
+  width: 40vw;
+  height: 60px;
+  padding: 5px;
+  padding-left: 10px;
+  outline: none;
+  border: 1px solid #005A66;
+}
+.checkboxs{
+  display: flex;
+  flex-direction: column;
+}
+.checkboxs input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 2.3em;
+  width: 2.3em;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+.checkmark:hover {
+  box-shadow: inset 17px 17px 16px #b3b3b3,
+            inset -17px -17px 16px #ffffff;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxs input:checked ~ .checkmark {
+  box-shadow: none;
+  background-color: #005A66;
+  transform: rotateX(360deg);
+}
+
+.checkboxs input:checked ~ .checkmark:hover {
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark::before {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxs input:checked ~ .checkmark::before {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxs .checkmark::before {
+  left: 0.96em;
+  top: 0.7em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  box-shadow: 0.1em 0.1em 0em 0 rgba(0,0,0,0.3);
+  transform: rotate(45deg);
+}
+.title-checkbox{
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  position: absolute;
+  margin-left: 180px;
+  font-style: normal;
+}
+select{
+  width: 40vw;
+  height: 60px;
+  padding: 5px;
+  padding-left: 10px;
+  outline: none;
+  border: 1px solid #005A66;
+}
+
+.submit-btn{
+  padding: 10px 150px;
+  position: relative;
+  margin-left: -110px;
+  border: 1px solid #005A66;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-weight: bold;
+  color: #005A66;
+  transition: 1s;
+  cursor: pointer;
+}
+.submit-btn:hover{
+  background-color: #005A66;
+  color: white;
+}
+.masked{
+  outline: none;
+}
+.masked:focus{
+  outline: none;
+}
+.sucess-msg{
+  display: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-weight: 500;
+  color: green;
+  text-align: center;
+  padding: 5px 5px;
+  margin-left: -90px;
+  border-radius: 5px;
+  background-color: rgb(207, 204, 204);
+  border: 1px solid grey;
+  margin-bottom: 100px;
+}
+.copy-frame{
+  margin-top: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.copy1{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  text-align: center;
+  width: 80vw;
+  font-size: 20px;
+}
+.text-especial{
+  font-weight: bold;
+  font-style: italic;
+  color: #005A66;
+}
+.copy2{
+  margin-top: 58px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  text-align: center;
+  width: 80vw;
+  font-size: 22px;
+  color: #013b42;
+}
+.topics-copy{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 98vw;
+}
+.topic{
+  border: 2px solid #03444d;
+  border-radius: 15px;
+  width: 270px;
+  height: 270px;
+  margin: 28px;
+  padding: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+  color: #012d33;
+}
+.topic:hover{
+  transform: scale(1.1);
+  background-color: #03444d;
+  color: white;
+}
+.topic h1{
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+.topic h2{
+  font-size: 16px;
+}
+.copywrite-2{
+  margin-top: 128px;
+  height: 500px;
+  background-size: cover;
+  background-position:40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 38px;
+}
+.filter-bc{
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.write1{
+  z-index: 2;
+  font-family: "Prata", serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+  color: #ffffff;
+  margin-bottom: 28px;
+}
+.write2{
+  font-family: "Prata", serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 22px;
+  width: 80vw;
+  color: white;
+  z-index: 2;
+  margin-bottom: 28px;
+}
+.texto-especial{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+  color: #02c2db;
+  cursor: pointer;
+}
+.link-to-register{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+  color: #005A66;
+  cursor: pointer;
+}
+.link-to-register:hover{
+  color: #038596;
+}
+.frase-efeito{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  padding: 60px;
+  font-size: 24px;
+  font-style: normal;
+  color: #FFFFFFCC;
+  width: 100%;
+  height: 100px;
+  background-color: #034a53;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-corretora{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 28px;
+}
+.title-corretora{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  color: #034a53;
+  font-size: 26px;
+}
+
+
+@media (max-width: 700px){
+  .header{
+    flex-direction: row;
+    width: 100vw;
+    height: 900px;
+    background-image: url('https://api.fgempreendimentos.com.br:2341/img/2dd9d278-21c3-4369-ae7e-ff79dd78f759/sappire-tower-700x1000px.jpg?fm=jpg&q=80&fit=max');
+    background-position: center bottom;
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-size: cover; /* Ajusta a imagem para cobrir o elemento */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    background-blend-mode: darken; /* Faz a cor escurecer a imagem */
+  }
+  .capa{
+    display: none;
+  }
+  .filter{
+    height: 0px;
+  }
+  .more-infor{
+    margin-top: 160px;
+  }
+  .saber-mais-span{
+    margin-top: -10px;
+  }
+  #iframe{
+    width: 90vw;
+    height: 200px;
+  }
+  .form-frame{
+    flex-direction: column;
+  }
+  .form-action{
+    width: 90vw;
+  }
+  input{
+    width: 90vw;
+  }
+  select{
+    width: 90vw;
+  }
+  .checkboxs{
+    justify-content: center;
+    flex-direction: row;
+  }
+  .title-checkbox{
+    margin-left: 180px;
+  }
+  .title-video-frame{
+    flex-direction: column !important;
+  }
+  .video-reels1-style{
+    width: 80vw;
+    margin-bottom: 88px;
+  }
+  .info-reels1{
+    width: 80vw;
+    gap: 30px;
+  }
+  .copywrite-2{
+    gap: 8px;
+  }
+  .write1{
+    font-size: 20px;
+  }
+  .write2{
+    font-size: 14px;
+    width: 100%;
+  }
+  .texto-especial{
+    font-size: 14px;
+  }
+  .frase-efeito{
+    font-size: 16px;
+    padding: 0;
+  }
+}
