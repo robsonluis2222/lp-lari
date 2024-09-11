@@ -25,21 +25,11 @@ function App() {
   const [telefone, setTelefone] = useState('');
   const [prefer, setPrefer] = useState('');
 
+  const [isPlaying, setIsPlaying] = useState(false)
+
   const [selectedType, setSelectedType] = useState('');
   const [selectedValue, setSelectedValue] = useState('');
-  const [progress, setProgress] = useState(0)
-  const [isCheckedWpp, setIsCheckedWpp] = useState(false)
-  const [isCheckedTel, setIsCheckedTel] = useState(false)
-  const [isCheckedMail, setIsCheckedMail] = useState(false)
-  const [geralServicesStage, setGeralServicesStage] = useState(0)
-  const [structureStage, setStructureStage] = useState(0)
-  const [sealingStage, setSealingStage] = useState(0)
-  const [installationStage, setInstallationStage] = useState(0)
-  const [elevatorStage, setElevatorStage] = useState(0)
-  const [argamassaStage, setArgamassaStage] = useState(0)
-  const [acabamentosStage, setAcabamentosStage] = useState(0)
-  const [esquadriasStage, setEsquadriasStage] = useState(0)
-  const [moveisStage, setMoveisStage] = useState(0)
+
   const settings = {
     dots: false,
     infinite: true,
@@ -75,30 +65,27 @@ function App() {
   const muteRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
 
+  const removeIcon = () => {
+    muteRef.current.style.display = 'none'
+  }
+
   const toggleMute = () => {
-    if (reelsRef.current) {
-      reelsRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-      muteRef.current.style.display = 'none'
+    if(reelsRef.current){
+      if(isPlaying === false){
+        reelsRef.current.play();
+        setIsPlaying(true)
+        setIsMuted(!isMuted);
+        muteRef.current.style.display = 'none'
+      }
+      else{
+        console.log("Já está em curso.");
+      }
+
+
     }
   };
 
 
-  useEffect(() => {
-    // Tenta reproduzir o vídeo assim que o componente é montado
-    if (reelsRef.current) {
-      const attemptPlay = async () => {
-        try {
-          await reelsRef.current.play();
-          setIsPlaying(true);
-        } catch (error) {
-          console.log('Playback failed: ', error);
-        }
-      };
-
-      attemptPlay();
-    }
-  }, []);
 
 
   useEffect(() => {
@@ -221,7 +208,7 @@ function App() {
       <div className='video-modal' ref={videoRef}>
         <i className="bi bi-x-lg" id='close-video-btn' onClick={closeVideoModal}></i>
         <div className='frame-video'>
-          <iframe id='iframe' src="https://www.youtube.com/embed/gnM9KaaFjhA" title="YOUTUBE VIDEO PLAYER" frameborder="0" allow=" accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe id='iframe' src="https://www.youtube.com/embed/kgTP7A8gImY" title="YOUTUBE VIDEO PLAYER" frameborder="0" allow=" accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
 
@@ -247,8 +234,8 @@ function App() {
           <div className='title-video-frame'>
 
             <div className='reels1-div'>
-              <i className="bi bi-volume-mute-fill" ref={muteRef}></i>
-              <video className='video-reels1-style' ref={reelsRef} onClick={toggleMute} controls={false} autoPlay={true} muted={true}>
+              <i className="bi bi-play-circle-fill" ref={muteRef} onClick={toggleMute}></i>
+              <video className='video-reels1-style' ref={reelsRef} onClick={removeIcon} controls={true}>
 
                 <source src={Reels1} type="video/mp4" />
                 Seu navegador não suporta o elemento de vídeo.
@@ -335,77 +322,6 @@ function App() {
         </div>
       </div>
 
-      <div className='stage-frame'>
-        <div className='title-stages'>
-          <span className='title-frame-stage'>Estágio da Obra</span>
-        </div>
-        <div className='progress-container'>
-          <label className='stage-geral-title'>Estágio Geral</label>
-          <div className="progress-bar" style={{ width: `${progress}%` }}>
-          {progress}%
-          </div>
-        </div>
-        <div className='show-more-stages-div' onClick={showStages} ref={stageControls}>
-          <span>VER MAIS</span>
-          <i className="bi bi-chevron-compact-down" id='one-arrow-down'></i>
-        </div>
-        <div className='all-stages-div' ref={allStagesRef}>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Serviços Gerais</label>
-            <div className="progress-bar" style={{ width: `${geralServicesStage}%` }}>
-            {geralServicesStage}%
-            </div>
-          </div>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Estrutura</label>
-            <div className="progress-bar" style={{ width: `${structureStage}%` }}>
-            {structureStage}%
-            </div>
-          </div>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Vedações</label>
-            <div className="progress-bar" style={{ width: `${sealingStage}%` }}>
-            {sealingStage}%
-            </div>
-          </div>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Instalações</label>
-            <div className="progress-bar" style={{ width: `${installationStage}%` }}>
-            {installationStage}%
-            </div>
-          </div>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Revest. Argamassa</label>
-            <div className="progress-bar" style={{ width: `${argamassaStage}%` }}>
-            {argamassaStage}%
-            </div>
-          </div>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Elevador</label>
-            <div className="progress-bar" style={{ width: `${elevatorStage}%` }}>
-            {elevatorStage}%
-            </div>
-          </div>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Acabamentos</label>
-            <div className="progress-bar" style={{ width: `${acabamentosStage}%` }}>
-            {acabamentosStage}%
-            </div>
-          </div>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Esquadrias</label>
-            <div className="progress-bar" style={{ width: `${esquadriasStage}%` }}>
-            {esquadriasStage}%
-            </div>
-          </div>
-          <div className='progress-container'>
-            <label className='stage-geral-title'>Móveis e Decorações</label>
-            <div className="progress-bar" style={{ width: `${moveisStage}%` }}>
-            {moveisStage}%
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className='about'>
         <div className='about-title-frame'>
@@ -459,44 +375,9 @@ function App() {
               </select>
           </div>
           <div className='form-action'>
-            <span className='prefer-contact'>Selecione uma preferência de contato:</span>
-            <div className='form-frame2'>
-              <label className='checkboxs'>
-                <input
-                  type="checkbox"
-                  placeholder='Preferencia de contato'
-                  checked={isCheckedWpp}
-                  onChange={() => handleCheck('wpp')}
-                />
-                <span className='title-checkbox'>WhatsApp</span>
-                <div className="checkmark"></div>
-              </label>
 
-              <label className='checkboxs'>
-                <input
-                  type="checkbox"
-                  placeholder='Preferencia de contato'
-                  checked={isCheckedTel}
-                  onChange={() => handleCheck('tel')}
-                />
-                <span className='title-checkbox'>Telefone</span>
-                <div className="checkmark"></div>
-              </label>
-
-              <label className='checkboxs'>
-                <input
-                  type="checkbox"
-                  placeholder='Preferencia de contato'
-                  checked={isCheckedMail}
-                  onChange={() => handleCheck('mail')}
-                />
-                <span className='title-checkbox'>Email</span>
-                <div className="checkmark"></div>
-              </label>
-              <span className='submit-btn' onClick={handleSubmit}>ENVIAR</span>
-              <span className='sucess-msg' ref={sucessRef}>Tudo certo ! Entraremos em contato em breve.</span>
-
-            </div>
+            <span className='submit-btn' onClick={handleSubmit}>ENVIAR</span>
+            <span className='sucess-msg' ref={sucessRef}>Tudo certo ! Entraremos em contato em breve.</span>
 
           </div>
         </div>
