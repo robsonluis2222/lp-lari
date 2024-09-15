@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ImagemCorretora from '../public/corretora.webp'
 import Reels1 from '../public/reels1.mp4'
 import BalnearioCamboriu from '../public/bc.webp'
+import Tumbnail from '../public/tumb.webp'
 import {api} from './api';
 import { carouselItems } from './CarouselData'; // Importe os dados do carrossel
 import Slider from 'react-slick';
@@ -19,6 +20,7 @@ function App() {
   const allStagesRef = useRef(null)
   const stageControls = useRef(null)
   const sucessRef = useRef(null)
+  const tumbRef = useRef(null)
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -74,8 +76,10 @@ function App() {
       if(isPlaying === false){
         reelsRef.current.play();
         setIsPlaying(true)
+
         setIsMuted(!isMuted);
         muteRef.current.style.display = 'none'
+        tumbRef.current.style.display = 'none'
       }
       else{
         console.log("Já está em curso.");
@@ -232,8 +236,10 @@ function App() {
 
       <div className='video-frame' id='section1'>
           <div className='title-video-frame'>
-
             <div className='reels1-div'>
+              <div className='tumb-div' ref={tumbRef}>
+                <img className='tumb' src={Tumbnail} alt="" />
+              </div>
               <i className="bi bi-play-circle-fill" ref={muteRef} onClick={toggleMute}></i>
               <video className='video-reels1-style' ref={reelsRef} onClick={removeIcon} controls={true}>
 
