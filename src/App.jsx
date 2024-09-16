@@ -113,7 +113,7 @@ function App() {
 
   useEffect(() => {
     const sr = ScrollReveal({
-      distance: '50px',
+      distance: '100px',
       duration: 1000,
       easing: 'ease-in-out',
       origin: 'bottom',
@@ -121,9 +121,18 @@ function App() {
     });
 
     sr.reveal('.header', { origin: 'top' });
-    sr.reveal('.video-frame', { origin: 'bottom' });
-    sr.reveal('.about', { origin: 'bottom' });
-    sr.reveal('.carrossel', { origin: 'bottom' });
+    sr.reveal('.video-modal', { origin: 'bottom' });
+    sr.reveal('.video-frame', { origin: 'left' });
+    sr.reveal('.copy-frame', { origin: 'right' });
+    sr.reveal('.slider-conf', { origin: 'left' });
+    sr.reveal('.video', { origin: 'right' });
+    sr.reveal('.copywrite-2', { origin: 'left' });
+    sr.reveal('.frase-efeito', { origin: 'top' });
+    sr.reveal('.location-frame', { origin: 'left' });
+    sr.reveal('.about', { origin: 'right' });
+    sr.reveal('.contact-frame', { origin: 'left' });
+    sr.reveal('.footer', { origin: 'right' });
+
     videoRef.current.style.display = 'none'
   }, []);
 
